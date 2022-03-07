@@ -1,0 +1,30 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target-path = [ 2f 00 ];
+
+		__overlay__ {
+
+			chosen {
+
+				overlays {
+					M-BB-SD-LIMIT-00A0 = "Fri Nov 20 10:48:37 2020";
+				};
+			};
+		};
+	};
+
+	fragment@70 {
+		target = < 0xffffffff >;
+
+		__overlay__ {
+			max-frequency = < 0x17d7840 >;
+		};
+	};
+
+	__fixups__ {
+		mmc1 = "/fragment@70:target:0";
+	};
+};
